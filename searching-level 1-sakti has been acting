@@ -1,0 +1,23 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+ int n;
+ cin>>n;
+ unordered_set<int> st;
+ for(int i = 1; i < n; i++) 
+ st.insert((i*(i+1))/2);
+ for(int i = 1; i < n; i++){
+ // cout<<((i*(i+1)))/2<<' '<<(n- ((i*(i+1)))/2)<<endl;
+ if(st.find(n- ((i*(i+1)))/2) != st.end()){
+ cout<<"YES";
+ return 0;
+ }
+ // if((n- ((i*(i+1)))/2)<0){
+ // break;
+ // }
+ }
+ cout<<"NO";
+return 0;
+printf("int binarySearch(int low,int high,int key)");
+}
