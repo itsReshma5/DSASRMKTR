@@ -1,0 +1,20 @@
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+using namespace std;
+int main()
+{   string car,final;
+    float a,width,distance,speed1;
+    int ramp;
+    cin>>car>>ramp>>a>>width;
+    speed1=sqrt(2*a*ramp);
+    distance=speed1*speed1/9.805;
+    if(distance<(width-5.0))
+    final="SPLASH!";
+    if((distance>=(width-5.0))&&(distance<=width))
+    final="JOVA MADE IT!";
+    if(distance>width)
+    final="LIKE A LEGEND!";
+    cout<<car<<" will reach a speed of "<<fixed<<setprecision(2)<<speed1<<" m/s on a "<<ramp<<" ramp crossing "<<fixed<<setprecision(1)<<distance<<" of "<<fixed<<width<<" meters, "<<final;
+    return 0;
+}

@@ -1,0 +1,25 @@
+#include <bits/stdc++.h>
+using namespace std;
+int i;
+#define FORR(i,n) for(int i=0 ; i<n ; i++)
+signed main()
+{
+    int n,sum=0,l,r;
+    cin>>n;
+    vector <int> a(n),b(n);
+    FORR(i,n){
+        cin>>a[i];
+        b[i]=a[i];
+    }
+    sort(b.begin(),b.end(),greater<int>());
+    FORR(i,n){
+        if(a[i]!=b[i]){
+            l=a[i];
+            r=a[n-i-1];
+            swap(l,r);
+        }
+    }
+    FORR(i,n)
+        sum+=abs(b[i]-i-1);
+    cout<<sum;
+}

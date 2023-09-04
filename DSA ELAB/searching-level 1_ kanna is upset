@@ -1,0 +1,28 @@
+#include <stdio.h>
+void thirdLargest(int arr[],int arr_size)
+{
+ int j,k,temp;
+ for(j=0;j<arr_size;j++)
+ {
+ for(k=j+1;k<arr_size;k++)
+ {
+ if(arr[j]>arr[k])
+ {
+ temp=arr[j];
+ arr[j]=arr[k];
+ arr[k]=temp;
+ }
+ }
+ }
+}
+int main()
+{
+ int i,n;
+ scanf("%d",&n);
+ int arr[n];
+ for(i=0;i<n;i++)
+ scanf("%d",&arr[i]);
+ thirdLargest(arr,n);
+ printf("The third Largest element is %d",arr[n-3]);
+return 0;
+}

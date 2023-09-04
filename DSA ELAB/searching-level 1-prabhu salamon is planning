@@ -1,0 +1,32 @@
+#include<bits/stdc++.h>
+using namespace std;
+int F(int x){
+ int sum = 0;
+while(x > 0){
+sum += x%16;
+x = x/16;
+}
+return sum;
+}
+int search(int a, int b){
+ int count=0;
+ for(int i=a;i<=b;i++){
+ if(__gcd(i,F(i))>1)
+ count++;
+ }
+ return count;
+}
+int main(){
+ int t,l,r;
+ cin>>t;
+ while(t--){
+ cin>>l>>r;
+ //int count=0;
+ //for(int i=l;i<=r;i++){
+ // if(__gcd(i,F(i))>1)
+ // count++;
+ // }
+ int count=search(l,r);
+ cout<<count<<endl;
+ }
+}
