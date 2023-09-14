@@ -1,1 +1,50 @@
+#include <stdio.h>
+#include <stdlib.h>
+struct node *front = NULL;
+struct node *rear = NULL;
+struct node
+{
+ int data;
+ struct node *next;
+};
+void linkedListTraversal(struct node *ptr)
+{
+ //printf("Printing the elements of this linked list\n");
+ while (ptr != NULL)
+ {
+ printf("%d ", ptr->data);
+ ptr = ptr->next;
+ }
+}
+void enqueue(int d)
+{
+ struct node* new_n;
+ new_n = (struct node*)malloc(sizeof(struct node));
+ if(new_n==NULL){
+ printf("Queue is Full");
+ }
+ else{
+ new_n->data = d;
+ new_n->next = NULL;
+ if(front==NULL){
+ front=rear=new_n;
+ }
+ else{
+ rear->next = new_n;
+ rear=new_n;
+ }
+ }
+}
+int main()
+{
+ int n,i,t;
+ scanf("%d",&n);
+ for(i=0;i<n;i++)
+ {
+ scanf("%d",&t);
+ enqueue(t);
+ }
+ linkedListTraversal(front);
+ return 0;
+}
 
