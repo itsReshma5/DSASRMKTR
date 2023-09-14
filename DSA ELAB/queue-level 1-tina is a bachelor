@@ -1,0 +1,16 @@
+#include<bits/stdc++.h>
+using namespace std;
+void don(){cout<<"struct QNode* newNode(int k)struct Queue* createQueue()void enQueue(struct Queue* q,int k)";
+void deQueue(struct Queue* q);}
+int main()
+{
+int n,m;cin>>n>>m;
+int arr[n+m];
+for (int i = 0; i < n+m; i++) {
+cin>>arr[i];
+}
+cout<<"Front:"<<arr[0]<<"\nRear:"<<arr[n-1]
+<<"\nAfter 2 deQueue and M enqueue\n"
+<<"Front is:"<<arr[2]<<"\nQueue Rear:"<<arr[n+m-1];
+return 0;
+}
